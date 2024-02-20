@@ -31,7 +31,7 @@ export const getOne = (req, res) => {
 
 export const insertOne = (req, res) => {
     ProductDAO.insertOne(req.body)
-        .then(result => res.redirect('/api/products/'))
+        .then(result => res.redirect('/'))
         .catch(err => res.json({
             status: "Server unavailable"
         }));
@@ -43,7 +43,7 @@ export const updateOne = (req, res) => {
     ProductDAO.updateOne(barcode, product)
         .then(result => {
             if (result) {
-                res.redirect("/api/products/");
+                res.redirect("/");
             } else {
                 res.json({
                     status: "Product not found"
@@ -60,7 +60,7 @@ export const deleteOne = (req, res) => {
     ProductDAO.deleteOne(barcode)
       .then(result => {
         if (result) {
-            res.redirect("/api/products/");
+            res.redirect("/");
     } else {
         res.json({
             status: "Product not found"

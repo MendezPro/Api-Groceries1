@@ -1,4 +1,24 @@
+import productDAO from "../dao/products.dao.js";
 
+const getAll = (req,res) =>{
+    productDAO.getAll()
+    .then(products=>{
+        !products ? res.json({Status:"No data to show"}): res.json({products})
+    })
+    .catch(err=>res.json({
+        status:"Server unavailable"
+    }))
+}
+const getOne = (req,res) =>{
+    const barcode= req.params.barcode
+    productDAO.getOne(barcode)
+    .then(result=>{
+        !result?res.json({Status:`Barcode "${barcode}" Not Found :,(`}):res.json({Product:result})
+    })
+    .catch(err=>res.json({
+        status:"Server unavailable"
+    }))
+}
 const insertOne = (req,res) =>{
     const product= req.body
     productDAO.insertOne(product)

@@ -21,7 +21,7 @@
                 </div>
         </div>
         <div data-role="content" style="background-color: rgb(245, 239, 160);">
-            <form  action="/api/products/" method="POST">
+            <form  action="/" method="POST">
                 
                 <label for="txt_codigo_barras" style="color: rgb(0, 0, 0)">Codigo de barras:</label>
                 <input type="text" name="barcode" id="txt_codigo_barras" placeholder="Código de barras" 
@@ -62,7 +62,7 @@
                 <label for="submit-6" style="color: rgb(0, 0, 0)">Enviar</label>
                     <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all 
                     ui-mini" style="color: chocolate;">Guardar</button>
-                    <a href="/api/products/delete/<%= product.barcode %>" class="ui-btn">Eliminar</a>
+                    <a href="/<%= product.barcode %>" class="ui-btn">Eliminar</a>
             </form>
     </div>
         <div data-role="footer " >

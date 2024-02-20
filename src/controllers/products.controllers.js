@@ -1,4 +1,4 @@
-}
+
 const insertOne = (req,res) =>{
     const product= req.body
     productDAO.insertOne(product)

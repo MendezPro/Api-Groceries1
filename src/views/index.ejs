@@ -21,7 +21,7 @@
                 </div>
         </div>
         <div data-role="content" style="background-color: rgb(245, 239, 160);">
-            <form  action="/api/products/" method="POST">
+            <form  action="/" method="POST">
                 
                 <label for="txt_codigo_barras" style="color: rgb(0, 0, 0)">Codigo de barras:</label>
                 <input type="text" name="barcode" id="txt_codigo_barras" placeholder="Código de barras" value="">
@@ -72,8 +72,8 @@
                         <li> existencia: <%= product.stock %> </li>
                         <li> caducidad: <%= product.expiredDate %> </li>
                         <li> status :<%= product.status %> </li>
-                        <li><a href="/api/products/<%= product.barcode %>" class="ui-btn" >Editar</a></li>
-                        <li><a href="/api/products/<%= product.barcode %>" class="ui-btn" >Eliminar</a></li>
+                        <li><a href="/<%= product.barcode %>" class="ui-btn" >Editar</a></li>
+                        <li><a href="/<%= product.barcode %>" class="ui-btn" >Eliminar</a></li>
 
                         
                         <% }) %>
